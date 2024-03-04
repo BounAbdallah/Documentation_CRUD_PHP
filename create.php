@@ -1,5 +1,5 @@
 <?php
-require_once('config.php');
+require_once 'config.php';
 
 if(isset($_POST)){
     if(isset($_POST['nom']) && !empty($_POST['prenom'])
@@ -11,9 +11,9 @@ if(isset($_POST)){
             $mail = strip_tags($_POST['mail']);
             $telephone = strip_tags($_POST['telephone']);
 
-            $sql = "INSERT INTO `Etudiant` (`nom`, `prenom`, `email`, `INE`, `tel`) VALUES (:nom, :prenom, :email, :INE, :tel);";
+            $sql = "INSERT INTO `Etudiant` (`nom`, `prenom`, `email`, `INE`, `tel`) VALUES (:nom, :prenom, :email, :INE, :tel)";
 
-            $query = $db->prepare($sql);
+            $query = $conn->prepare($sql);
 
             $query->bindValue(':nom', $nom, PDO::PARAM_STR);
             $query->bindValue(':prenom', $prenom, PDO::PARAM_STR);
