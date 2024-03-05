@@ -1,5 +1,6 @@
 <?php 
-$host ="localhost:3307";
+
+$host ="localhost";
 $username = "root";
 $dbname = "gestion_des_Etudiant";
 $password = "";
